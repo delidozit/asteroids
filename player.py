@@ -1,6 +1,6 @@
 import pygame
 from circleshape import CircleShape
-from constants import *
+from constants import PLAYER_RADIUS, PLAYER_SHOOT_SPEED, PLAYER_SPEED, PLAYER_TURN_SPEED
 
 class Player(CircleShape):
     def __init__(self, x, y):
