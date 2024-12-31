@@ -24,9 +24,13 @@ def main():
 	player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2) # player position
 
 	while True:
+		keys = pygame.key.get_pressed()
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT: # exit game on window close
 				return
+		if keys[pygame.K_SPACE]:
+				new_shot = player.shoot(dt)
+				shots.add(new_shot)
 		screen.fill((0, 0 ,0)) # black screen
 		for sprite in updatable:
 			sprite.update(dt)
