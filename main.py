@@ -30,8 +30,8 @@ def main():
 				return
 		if keys[pygame.K_SPACE]:
 				new_shot = player.shoot(dt)
-				shots.add(new_shot)
 				if new_shot:
+					shots.add(new_shot)
 					print("shot added")
 		screen.fill((0, 0 ,0)) # black screen
 		for sprite in updatable:
@@ -44,7 +44,7 @@ def main():
 			sprite.draw(screen)
 		pygame.display.flip() # screen refresh
 		dt = clock.tick(60) / 1000 # setting clock speed to 60 fps
-	
+
 
 if __name__ == "__main__":
 	main()
