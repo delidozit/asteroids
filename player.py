@@ -19,15 +19,16 @@ class Player(CircleShape):
     def rotate(self, dt):
         self.rotation += PLAYER_TURN_SPEED * dt
 
-    def update(self, dt):
-        keys = pygame.key.get_pressed()
+
 
     def shoot(self, dt):
         shot_direction = pygame.Vector2(0, 1)
         shot_direction = shot_direction.rotate(-self.rotation)
         shot_velocity = shot_direction * PLAYER_SHOOT_SPEED
 
-
+    def update(self, dt):
+        keys = pygame.key.get_pressed()
+        
         if keys[pygame.K_a]:
             self.rotate(-dt)
         if keys[pygame.K_d]:
