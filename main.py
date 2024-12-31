@@ -33,7 +33,6 @@ def main():
 				new_shot = player.shoot(dt)
 				if new_shot:
 					shots.add(new_shot)
-					print("shot added")
 		screen.fill((0, 0 ,0)) # black screen
 		for sprite in updatable:
 			sprite.update(dt)
@@ -42,9 +41,10 @@ def main():
 				print("Game over!")
 				sys.exit()
 		for shot in shots:
-			if asteroid.check_collision(shot, asteroid):
-				shot.kill()
-				asteroid.kill()
+			for asteroid in asteroids:
+				if asteroid.check_collision(shot):
+					shot.kill()
+					asteroid.kill()
 		for sprite in drawable:
 			sprite.draw(screen)
 		pygame.display.flip() # screen refresh
