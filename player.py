@@ -29,6 +29,8 @@ class Player(CircleShape):
             shot_velocity = shot_direction * PLAYER_SHOOT_SPEED
             new_shot = Shot(self.position.x, self.position.y, shot_velocity)
             return new_shot
+        else:
+            print("cannot shoot yet")
 
     def update(self, dt):
         keys = pygame.key.get_pressed()

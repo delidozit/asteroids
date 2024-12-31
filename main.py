@@ -31,6 +31,8 @@ def main():
 		if keys[pygame.K_SPACE]:
 				new_shot = player.shoot(dt)
 				shots.add(new_shot)
+				if new_shot:
+					print("shot added")
 		screen.fill((0, 0 ,0)) # black screen
 		for sprite in updatable:
 			sprite.update(dt)
